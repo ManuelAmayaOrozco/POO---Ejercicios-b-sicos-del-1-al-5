@@ -26,7 +26,7 @@ class Persona(altura: Double, peso: Double) {
     }
 
     fun mostrarDesc() {
-        println("${this.nombre} con una altura de ${this.altura}m y un peso de ${this.peso}kg tiene un IMC de ${this.imc} ${obtenerImcDesc()}")
+        println("${this.nombre} con una altura de ${this.altura}m y un peso de ${this.peso}kg tiene un IMC de ${"%.2f".format(this.imc)} ${obtenerImcDesc()}.")
     }
 
     fun obtenerImcDesc(): String {
@@ -49,22 +49,22 @@ class Persona(altura: Double, peso: Double) {
 
 fun ejercicio4_1() {
     val persona1 = Persona(nombre = "Manuel", altura = 1.2, peso = 64.0)
-    println("${persona1.nombre} tiene una altura de ${persona1.altura}m, pesa ${persona1.peso}kg y su IMC es ${persona1.imc}.")
+    println("${persona1.nombre} tiene una altura de ${persona1.altura}m, pesa ${persona1.peso}kg y su IMC es ${"%.2f".format(persona1.imc)}.")
     print("Introduce un nuevo nombre para esta persona: ")
     persona1.nombre = readln()
-    println("${persona1.nombre} tiene una altura de ${persona1.altura}m, pesa ${persona1.peso}kg y su IMC es ${persona1.imc}.")
+    println("${persona1.nombre} tiene una altura de ${persona1.altura}m, pesa ${persona1.peso}kg y su IMC es ${"%.2f".format(persona1.imc)}.")
 
     val persona2 = Persona(nombre = "Felipe", altura = 6.4, peso = 89.0)
     println("${persona2.nombre} tiene una altura de ${persona2.altura}m, pesa ${persona2.peso}kg.")
 
     val persona3 = Persona(nombre = "Goob", altura = 7.0, peso = 69.0)
-    println("${persona3.nombre} tiene una altura de ${persona3.altura}m, pesa ${persona3.peso}kg y su IMC es ${persona3.imc}.")
+    println("${persona3.nombre} tiene una altura de ${persona3.altura}m, pesa ${persona3.peso}kg y su IMC es ${"%.2f".format(persona3.imc)}.")
     print("Introduce una nueva altura para esta persona: ")
     persona3.altura = readln().toDouble()
     print("Introduce un nuevo peso para esta persona: ")
     persona3.peso = readln().toDouble()
     persona3.imc = persona3.peso / (persona3.altura * persona3.altura)
-    println("${persona3.nombre} tiene una nueva altura de ${persona3.altura}m, pesa ${persona3.peso}kg y su nuevo IMC es ${persona3.imc}.")
+    println("${persona3.nombre} tiene una nueva altura de ${persona3.altura}m, pesa ${persona3.peso}kg y su nuevo IMC es ${"%.2f".format(persona3.imc)}.")
 }
 
 fun ejercicio4_2() {
