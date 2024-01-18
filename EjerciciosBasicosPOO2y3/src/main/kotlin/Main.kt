@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
          3. b) Mostrar la persona 2 y persona 3. c) Comparar si las dos personas son iguales, y
          mostrar el resultado.
     */
-    //ejercicio4_2()
+    ejercicio4_2()
 
     /*
     Ejercicio 4.3

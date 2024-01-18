@@ -1,15 +1,30 @@
 class Persona(altura: Double, peso: Double) {
     var nombre: String = "Sin nombre"
+        get() = field
+        set(value) {
+            require(value.trim().isNotEmpty()) {"El nombre no puede estar vacio."}
+            field = value
+        }
 
     var altura: Double = 0.0
+        get() = field
+        set(value) {
+            require(value > 0) {"La altura no puede ser negativa."}
+            field = value
+        }
 
     var peso: Double = 0.0
+        get() = field
+        set(value) {
+            require(value > 0) {"El peso no puede ser negativo."}
+            field = value
+        }
 
     var imc: Double = 0.0
-
-    init {
-        this.imc = peso / (altura * altura)
-    }
+        get() = peso / (altura * altura)
+        set(value) {
+            field = value
+        }
 
     constructor(nombre: String, altura: Double, peso: Double) : this(altura, peso) {
         this.nombre = nombre
@@ -23,6 +38,22 @@ class Persona(altura: Double, peso: Double) {
 
     fun obtenerIMC(): Double {
         return this.imc
+    }
+
+    fun alturaEncimaMedia(): Boolean {
+        return if (this.altura >= 1.75) {
+            true
+        } else {
+            false
+        }
+    }
+
+    fun pesoEncimaMedia(): Boolean {
+        return if (this.peso >= 70) {
+            true
+        } else {
+            false
+        }
     }
 
     fun mostrarDesc() {
